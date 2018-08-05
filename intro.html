@@ -38,11 +38,14 @@
         <div class="post">
             <div class="onyourmind" id="top">
                 <form action="" method="post">
-                    <textarea name="" id="" cols="30" rows="10">
+                    <textarea name="" id="" cols="30" rows="10" class="input-to-copy"></textarea>
 
-                </textarea>
-                    <input type="button" value="Submit">
+                    <input type="button" value="Submit" class="press">
+
                 </form>
+                <p class="p-to-copy">
+                    WHAT IS IN YOUR MIND ?
+                </p>
             </div>
             <div class="post-show">
                 <div class="post-show-item">
@@ -113,5 +116,19 @@
         </div>
     </div>
 </body>
+<script>
+    const output = document.querySelector(".p-to-copy");
+    const input = document.querySelector(".input-to-copy");
+    const press = document.querySelector(".press");
+
+    input.addEventListener("change", function() {
+        output.innerText = input.value;
+        input.value = " ";
+    })
+
+    press.addEventListener("click", function() {
+        alert("hey you!!!");
+    })
+</script>
 
 </html>
