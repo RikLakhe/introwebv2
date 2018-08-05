@@ -1,4 +1,4 @@
-var letter = prompt('one letter pplz');
+var letter = prompt('one letter');
 
 var small = letter.toLocaleLowerCase();
 

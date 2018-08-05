@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: lavender;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    display: flex;
+    height: 900px;
+    width: 600px;
+    background-color: grey;
+    border-radius: 15px;
+    flex-wrap: wrap;
+}
+
+.display-area {
+    display: flex;
+    background-color: black;
+    height: 120px;
+    width: 500px;
+    margin-top: 40px;
+    margin-left: 45px;
+    border-radius: 5px;
+    border: solid 1px darkgray;
+    color: aliceblue;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.number {
+    padding-bottom: 5px;
+    padding-right: 10px;
+    font-size: 50px;
+}
+
+.keys {
+    margin-left: 35px;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+button {
+    height: 130px;
+    width: 130px;
+    background-color: #e1e1e1;
+    font-size: 50px;
+}
+
+.calculator .keys button:hover {
+    background-color: #c9c9c9;
+}
+
+.calculator .keys .key-math button {
+    background-color: #f2b542;
+}
+
+.calculator .keys .key-math button:hover {
+    background-color: #fbd54f;
+}
+
+.calculator .keys .key-twice button {
+    width: 260px !important;
+}
+
+.calculator .keys .key-threetimes button {
+    width: 390px !important;
+}
