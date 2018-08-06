@@ -64,7 +64,23 @@ removeNumberLast(){
 
 }
 
-add(){
-    total =total + parseInt(enterNumber,10);
-    display()
+
+calculating(){
+    switch(mathflag){
+        case 
+        total = enterNumber
+        display();
+
+        case "plus":
+        total = total + enterNumber;
+        display();
+        enternumber =0;
+
+        case "minus":
+        total = total - enterNumber;
+        display();
+        enternumber = 0;
+
+       
+    }
 }

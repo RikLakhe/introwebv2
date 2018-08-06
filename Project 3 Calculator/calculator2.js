@@ -24,72 +24,87 @@ function checkKey(keyPressed) {
         case "1":
             console.log(1);
             addToNumber(1);
+            console.log(total);
             break;
 
         case "2":
             console.log(2);
             addToNumber(2);
+            console.log(total);
             break;
         case "3":
             console.log(3);
             addToNumber(3);
+            console.log(total);
             break;
 
         case "4":
             console.log(4);
             addToNumber(4);
+            console.log(total);
             break;
 
         case "5":
             console.log(5);
             addToNumber(5);
+            console.log(total);
             break;
 
         case "6":
             console.log(6);
             addToNumber(6);
+            console.log(total);
             break;
 
         case "7":
             console.log(7);
             addToNumber(7);
+            console.log(total);
             break;
 
         case "8":
             console.log(8);
             addToNumber(8);
+            console.log(total);
             break;
 
         case "9":
             console.log(9);
             addToNumber(9);
+            console.log(total);
             break;
 
         case "0":
             console.log(0);
             addToNumber(0);
+            console.log(total);
             break;
 
         case "C":
             console.log("Clear");
             clearAll();
+            console.log(total);
             break;
 
         case "+":
             console.log("plus");
+            calculation();
             signFlag = "plus";
             break;
 
         case "-":
             console.log("minus");
+            calculation();
             signFlag = "minus";
             break;
         case "X":
             console.log("multiply");
+            calculation();
             signFlag = "multiply";
             break;
         case "÷":
             console.log("divide");
+            calculation();
             signFlag = "divide";
             break;
         case "←":
@@ -98,6 +113,7 @@ function checkKey(keyPressed) {
             break;
         case "=":
             console.log("equal");
+            calculation();
             signFlag = "equal";
             break;
         default:
@@ -116,7 +132,7 @@ function addToNumber(numberPressed) {
 }
 
 function clearAll() {
-
+    signFlag = "";
     total = 0;
     enterNumber = "";
     printNumber(total);
@@ -146,5 +162,53 @@ function removeNumberLast() {
         str = str.slice(0, -1);
         enterNumber = str;
         printNumber(str);
+    }
+}
+
+function calculation() {
+    switch (signFlag) {
+        case "":
+            total = parseInt(enterNumber, 10);
+            console.log(total);
+            printNumber(0);
+            enterNumber = 0;
+            break;
+        case "plus":
+            total = total + parseInt(enterNumber, 10);
+            console.log(total);
+            printNumber(total);
+            enterNumber = 0;
+            break;
+        case "minus":
+            total = total - parseInt(enterNumber, 10);
+            console.log(total);
+            printNumber(total);
+            enterNumber = 0;
+            break;
+        case "multiply":
+            total = total * parseInt(enterNumber, 10);
+            console.log(total);
+            printNumber(total);
+            enterNumber = 0;
+            break;
+        case "divide":
+            if (enterNumber === "0") {
+                return 0;
+            } else {
+                total = total / parseInt(enterNumber, 10);
+                console.log(total);
+                printNumber(total);
+                enterNumber = 0;
+            }
+            break;
+        case "equal":
+            printNumber(total);
+            console.log(total);
+            enterNumber = 0;
+            total = 0;
+            break;
+
+        default:
+            break;
     }
 }
