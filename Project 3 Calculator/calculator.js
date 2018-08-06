@@ -64,6 +64,7 @@ multi.addEventListener("click", function() {
         total = total * tempOne;
         display.innerText = total;
         numberOne = 0;
+        console.log(total);
     }
 
 })
@@ -71,19 +72,23 @@ multi.addEventListener("click", function() {
 let sub = document.querySelector('.sub');
 sub.addEventListener("click", function() {
     // alert("sub");
+    console.log(total);
     var tempOne = parseInt(numberOne, 10);
     total = total - tempOne;
     display.innerText = total;
     numberOne = 0;
+    console.log(total);
 })
 let plus = document.querySelector('.plus');
 plus.addEventListener("click", function() {
     // alert("plus");
+    console.log(total);
     display.innerText = total;
     var tempOne = parseInt(numberOne, 10);
     total = total + tempOne;
     display.innerText = total;
     numberOne = 0;
+    console.log(total);
 
 
 })
