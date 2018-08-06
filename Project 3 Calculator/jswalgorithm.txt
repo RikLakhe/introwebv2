@@ -1,7 +1,7 @@
 total = 0
 enterNumber= ""
 display = to-display
-
+flag ="";
 display total;
 
 
@@ -33,4 +33,38 @@ function checkKey(keyPress){
 function addToNumber(keyPress){
     enterNumber = enterNumber + keyPress;
     display.innerText = parseInt(enterNumber, 10);
+}
+
+
+checkLimitNumber (){
+    if(enterNumber.length >9){
+        out limit out
+        break
+    }
+}
+
+removeNumberLast(){
+    if (enterNumber.length === 0) {
+        return 0;
+    }
+
+    if (enterNumber.length === 1) {
+        var str = enterNumber;
+        str = str.slice(0, -1);
+        enterNumber = str;
+        display.innerText = 0;
+
+    } else {
+
+        var str = enterNumber;
+        str = str.slice(0, -1);
+        enterNumber = str;
+        display.innerText = str;
+    }
+
+}
+
+add(){
+    total =total + parseInt(enterNumber,10);
+    display()
 }

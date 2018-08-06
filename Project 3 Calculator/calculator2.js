@@ -3,8 +3,8 @@ var display = document.querySelector('.number');
 
 var total = 0;
 var enterNumber = "";
-
-display.innerText = total;
+var signFlag = "";
+printNumber(0);
 
 Array.from(key).forEach(link => {
     link.addEventListener('click', function(event) {
@@ -15,6 +15,9 @@ Array.from(key).forEach(link => {
     })
 })
 
+function printNumber(temp) {
+    display.innerText = temp;
+}
 
 function checkKey(keyPressed) {
     switch (keyPressed) {
@@ -74,22 +77,28 @@ function checkKey(keyPressed) {
 
         case "+":
             console.log("plus");
+            signFlag = "plus";
             break;
 
         case "-":
             console.log("minus");
+            signFlag = "minus";
             break;
         case "X":
             console.log("multiply");
+            signFlag = "multiply";
             break;
         case "÷":
             console.log("divide");
+            signFlag = "divide";
             break;
         case "←":
             console.log("delete");
+            removeNumberLast();
             break;
         case "=":
             console.log("equal");
+            signFlag = "equal";
             break;
         default:
             break;
@@ -98,12 +107,44 @@ function checkKey(keyPressed) {
 }
 
 function addToNumber(numberPressed) {
+    if (checkLimitNumber()) {
+        return;
+    }
     enterNumber = enterNumber + numberPressed;
-    display.innerText = parseInt(enterNumber, 10);
+    // display.innerText = parseInt(enterNumber, 10);
+    printNumber(parseInt(enterNumber, 10));
 }
 
 function clearAll() {
+
     total = 0;
     enterNumber = "";
-    display.innerText = total;
+    printNumber(total);
+}
+
+function checkLimitNumber() {
+    if (enterNumber.length > 14) {
+        console.log("limit out");
+        return true;
+    }
+}
+
+function removeNumberLast() {
+    if (enterNumber.length === 0) {
+        return 0;
+    }
+
+    if (enterNumber.length === 1) {
+        var str = enterNumber;
+        str = str.slice(0, -1);
+        enterNumber = str;
+        printNumber(0);
+
+    } else {
+
+        var str = enterNumber;
+        str = str.slice(0, -1);
+        enterNumber = str;
+        printNumber(str);
+    }
 }
