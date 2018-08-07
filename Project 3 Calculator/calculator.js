@@ -79,6 +79,7 @@ sub.addEventListener("click", function() {
     numberOne = 0;
     console.log(total);
 })
+
 let plus = document.querySelector('.plus');
 plus.addEventListener("click", function() {
     // alert("plus");

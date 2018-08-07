@@ -203,9 +203,7 @@ function calculation() {
             break;
         case "equal":
             printNumber(total);
-            console.log(total);
-            enterNumber = 0;
-            total = 0;
+            clearAll();
             break;
 
         default:
