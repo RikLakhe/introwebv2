@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    display: grid;
+    grid-row-gap: 10px;
+    background-color: #a6b5ce;
+}
+
+div img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.top {
+    align-self: center;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.list {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.add-doggo {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.dog-picture {
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
